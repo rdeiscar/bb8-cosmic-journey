@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+        bb8: {
+          orange: '#FF5A0F',
+          white: '#F0F0F0',
+          gray: '#2D3748',
+          'dark-blue': '#0F172A',
+          'light-blue': '#38BDF8'
+        },
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,12 +92,74 @@ export default {
 					to: {
 						height: '0'
 					}
-				}
+				},
+        'fade-in': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateY(10px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateY(0)'
+          }
+        },
+        'fade-in-right': {
+          '0%': {
+            opacity: '0',
+            transform: 'translateX(20px)'
+          },
+          '100%': {
+            opacity: '1',
+            transform: 'translateX(0)'
+          }
+        },
+        'roll-in': {
+          '0%': {
+            transform: 'translateX(-100%) rotate(-360deg)',
+            opacity: '0'
+          },
+          '100%': {
+            transform: 'translateX(0) rotate(0deg)',
+            opacity: '1'
+          }
+        },
+        'float': {
+          '0%, 100%': {
+            transform: 'translateY(0)'
+          },
+          '50%': {
+            transform: 'translateY(-10px)'
+          }
+        },
+        'pulse-glow': {
+          '0%, 100%': {
+            opacity: '1',
+            transform: 'scale(1)'
+          },
+          '50%': {
+            opacity: '0.8',
+            transform: 'scale(1.05)'
+          }
+        }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+        'fade-in': 'fade-in 0.6s ease-out',
+        'fade-in-right': 'fade-in-right 0.6s ease-out',
+        'roll-in': 'roll-in 1s ease-out',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+			},
+      fontFamily: {
+        sans: ['Inter', 'sans-serif'],
+        mono: ['Space Mono', 'monospace'],
+      },
+      backgroundImage: {
+        'stars': "url('https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=2400&q=80')",
+        'nebula': "url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=2400&q=80')",
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+      },
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
